@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  quartz:
+    image: shommey/dockerized-quartz
+    container_name: quartz-notes
+    environment:
+      # Use your custom Quartz repo or leave blank for the default Quartz repo
+      # GIT_REPO: "https://github.com/yourusername/your-quartz-site.git"
+      # Optional: specify a branch to checkout
+      # GIT_BRANCH: "v4"
+    volumes:
+      # Mount your Obsidian vault for Quartz to read and build the notes from
+      # - /path/on/host:/vault:ro
+      # Mount existing quartz
+      # - /path/on/host:/usr/src/app/quartz
+      # Optional: Persist logs if needed
+      # - /path/on/host:/var/log/nginx
+    ports:
+      # Map any port on the host to port 80 in the container for web access
+      - "80:80"
+    restart: unless-stopped
