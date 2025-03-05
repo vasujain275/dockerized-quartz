@@ -8,6 +8,10 @@
 
 - **Automated Builds**: Quartz will rebuild every time after set delay as notes in your docker voulume change.
 
+- **Webhook Trigger**: Additional way of triggering Quartz build by sending POST request to secret URL.
+
+- **Notifications**: Notifications on build start, success or fail. 
+
 - **Default or Custom Quartz Repository**: If none present, container will clone git repo on startup, [the Quartz repo](https://github.com/jackyzha0/quartz) or your custom one.
 
 - **Support for Private Repositories**: If you want to hide your Quartz config. 
@@ -60,3 +64,14 @@ To quickly get started with Quartz in Docker create `docker-compose.yml` file:
     Access your Quartz site on `http://<YOUR_MACHINE_IP>:<PORT>`
 
 For more detailed setups [see docs](docs/index.md).
+
+### Table of Contents
+
+1. [Overview](docs/overview.md)
+2. [Providing Quartz](docs/providing-quartz.md)
+3. [Importing Obsidian Vault](docs/importing-vault.md)
+4. [Enabling Basic Auth](docs/basic-auth.md)
+5. [Building From Source](docs/build-from-source.md)
+6. [Trigger Rebuild With Webhook](docs/trigger-rebuild-with-webhook.md)
+7. [Cron Job Trigger](docs/cron-job-trigger.md)
+8. [Notifications Setup](docs/notifications.md)

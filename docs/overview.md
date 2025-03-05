@@ -74,3 +74,9 @@ By default, if no volumes provided, container will clone default Quartz repo and
 - **`NOTIFY_TARGET`**
   Apprise target to send notifications to (Slack, Discord, Telegram, Ntfy, etc.).
   Triggers on build start, success or fail.
+
+- **`VAULT_DO_GIT_PULL_ON_UPDATE`**
+  Execute git pull in /vault directory before rebuild
+  Usefull when storing vault in git repository
+  Do initial pull before setting this and make sure container can access the repo
+  default false
