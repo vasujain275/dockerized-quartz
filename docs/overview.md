@@ -15,17 +15,21 @@ By default, if no volumes provided, container will clone default Quartz repo and
    - Optionally checks out a custom branch if defined in the environment variables.
    - Perfroms initial Quartz build by running `build-quartz.sh`
    - Optionally runs `watch-and-build-quartz.sh`script. Defaults to true.
+   - Starts webhook service, if enabled.
 
 2. **`build-quartz.sh`**  
     A simple script taht runs `npx quartz build`.
     - It looks for Obsidian vault at `/vault` path in container.
     - It outputs build files into `/usr/share/nginx/html`
 
-2. **`watch-and-build-quartz.sh`**  
+3. **`watch-and-build-quartz.sh`**  
    This script triggers a rebuild of the Quartz site:
    
    - Watches for changes in the vault files.
    - When notes are updated, the script waits for a set delay to ensure no more edits are happening, then runs the `build-quartz.sh`.
+
+4. **`server.js`**
+    Simple node express app that serves as webhook to start Quartz build on demand. More [here](trigger-rebuild-with-webhook.md)
 
 ### Paths in the Container
 
@@ -62,3 +66,7 @@ By default, if no volumes provided, container will clone default Quartz repo and
 - **`AUTO_REBUILD`**:  
   Set this to enable automatic rebuilding when file changes are detected. 
   Use `true` to enable or `false` to disable.
+
+- **`REBUILD_WEBHOOK_SECRET`**:
+  Set to something strong, for example: `UQjO8DJKf9CfA9Gd8cDJmhsjPnKl8MLZ`
+  If set, you can send a post request to `http://<ip>:<port>/rebuild/UQjO8DJKf9CfA9Gd8cDJmhsjPnKl8MLZ` to trigger Quartz Build

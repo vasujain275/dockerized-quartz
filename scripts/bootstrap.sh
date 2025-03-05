@@ -58,5 +58,16 @@ if [ "$AUTO_REBUILD" = true ]; then
   echo "Auto rebuild is enabled. Starting watch-and-build script..."
   /usr/src/app/scripts/watch-and-build-quartz.sh
 else
-  echo "Auto rebuild is disabled. No further actions will be taken."
+  echo "Auto rebuild is disabled."
 fi
+
+# Check if REBUILD_WEBHOOK_SECRET is set
+if [ -n "$REBUILD_WEBHOOK_SECRET" ]; then
+    echo "Starting webhook server..."
+    cd /usr/src/app
+    node server.js &
+else
+    echo "Skipping webhook server startup (REBUILD_WEBHOOK_SECRET is not set)."
+fi
+
+wait -n

@@ -4,11 +4,13 @@
 
 ## Features
 
-- **Minimal Configuration**: Simply plug in your existing Obsidian Vault as docker bind volume.
+- **Minimal Configuration**: Simply plug in your existing Obsidian Vault as read-only docker bind volume.
 
-- **Automated Builds**: Quartz will rebuild every time after set delay as notes in your docker voulume change.
+- **Automated Builds**: Quartz will rebuild every time after set delay as files in your docker voulume change.
 
-- **Default or Custom Quartz Repository**: If none present, container will clone git repo on startup, [the Quartz repo](https://github.com/jackyzha0/quartz) or your custom one.
+- **Webhook Trigger**: Additional way of triggering Quartz build by sending POST request to secret URL.
+
+- **Default or Custom Quartz Repository**: If none present, container will clone git repo on startup, [the Quartz repo](https://github.com/jackyzha0/quartz). This can be used to quickly test and evaluate stuff.
 
 - **Support for Private Repositories**: If you want to hide your Quartz config. 
 
@@ -20,3 +22,4 @@
 2. [Providing Quartz](providing-quartz.md)
 3. [Enabling Basic Auth](basic-auth.md)
 4. [Building From Source](build-from-source.md)
+5. [Trigger Rebuild With Webhook](trigger-rebuild-with-webhook.md)

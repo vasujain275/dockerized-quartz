@@ -11,6 +11,12 @@ RUN apt-get update && \
 COPY /scripts /usr/src/app/scripts
 RUN chmod +x /usr/src/app/scripts/*
 
+# Copy node server
+COPY server.js /usr/src/app/
+COPY package.json /usr/src/app/
+
+RUN npm i
+
 # Copy docs that will serve as an example vault content if no vault volume provided
 COPY /docs /vault
 
