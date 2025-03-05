@@ -10,6 +10,8 @@
 
 - **Webhook Trigger**: Additional way of triggering Quartz build by sending POST request to secret URL.
 
+- **Notifications**: Notifications on build start, success or fail. 
+
 - **Default or Custom Quartz Repository**: If none present, container will clone git repo on startup, [the Quartz repo](https://github.com/jackyzha0/quartz). This can be used to quickly test and evaluate stuff.
 
 - **Support for Private Repositories**: If you want to hide your Quartz config. 
@@ -23,3 +25,4 @@
 3. [Enabling Basic Auth](basic-auth.md)
 4. [Building From Source](build-from-source.md)
 5. [Trigger Rebuild With Webhook](trigger-rebuild-with-webhook.md)
+6. [Notifications Setup](notifications.md)

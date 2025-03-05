@@ -54,7 +54,7 @@ By default, if no volumes provided, container will clone default Quartz repo and
 
 ### Environment Variables
 
-- **`REPO`**:  
+- **`GIT_REPO`**:  
   The URL of your Quartz repository.
 
 - **`GIT_BRANCH`**:  
@@ -70,3 +70,7 @@ By default, if no volumes provided, container will clone default Quartz repo and
 - **`REBUILD_WEBHOOK_SECRET`**:
   Set to something strong, for example: `UQjO8DJKf9CfA9Gd8cDJmhsjPnKl8MLZ`
   If set, you can send a post request to `http://<ip>:<port>/rebuild/UQjO8DJKf9CfA9Gd8cDJmhsjPnKl8MLZ` to trigger Quartz Build
+
+- **`NOTIFY_TARGET`**
+  Apprise target to send notifications to (Slack, Discord, Telegram, Ntfy, etc.).
+  Triggers on build start, success or fail.

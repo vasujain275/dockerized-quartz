@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 # Install Node.js, Nginx, git, and inotify-tools
 RUN apt-get update && \
-    apt-get install -y curl gnupg2 ca-certificates lsb-release inotify-tools nginx git apache2-utils && \
+    apt-get install -y curl apprise gnupg2 ca-certificates lsb-release inotify-tools nginx git apache2-utils && \
     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y nodejs
 

@@ -61,13 +61,19 @@ else
   echo "Auto rebuild is disabled."
 fi
 
-# Check if REBUILD_WEBHOOK_SECRET is set
 if [ -n "$REBUILD_WEBHOOK_SECRET" ]; then
     echo "Starting webhook server..."
     cd /usr/src/app
     node server.js &
 else
     echo "Skipping webhook server startup (REBUILD_WEBHOOK_SECRET is not set)."
+fi
+
+if [ -n "$NOTIFY_TARGET" ]; then
+    echo "Sending test notification."
+    apprise -vv --title="Dockerized Quartz" --body="Dockerized Quartz has started and notifications are working" "$NOTIFY_TARGET"
+else
+    echo "Notifications are not enabled."
 fi
 
 wait -n
