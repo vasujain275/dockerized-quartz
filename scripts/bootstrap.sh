@@ -27,6 +27,7 @@ else
 fi
 
 git config --global --add safe.directory /usr/src/app/quartz
+git config --global --add safe.directory /vault
 
 # Check if the quartz directory is already present and not empty
 if [ -d "$QUARTZ_DIR" ] && [ "$(ls -A $QUARTZ_DIR)" ]; then

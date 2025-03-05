@@ -1,6 +1,13 @@
 #!/bin/bash
 
 QUARTZ_DIR="/usr/src/app/quartz"
+VAULT_DIR="/vault"
+
+if [ "$VAULT_DO_GIT_PULL_ON_UPDATE" = true ]; then
+  echo "Executing git pull in /vault directory"
+  cd $VAULT_DIR
+  git pull
+fi
 
 cd $QUARTZ_DIR
 

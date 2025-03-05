@@ -18,7 +18,7 @@ By default, if no volumes provided, container will clone default Quartz repo and
    - Starts webhook service, if enabled.
 
 2. **`build-quartz.sh`**  
-    A simple script taht runs `npx quartz build`.
+    A simple script that runs `npx quartz build`.
     - It looks for Obsidian vault at `/vault` path in container.
     - It outputs build files into `/usr/share/nginx/html`
 

@@ -22,7 +22,9 @@
 
 1. [Overview](overview.md)
 2. [Providing Quartz](providing-quartz.md)
-3. [Enabling Basic Auth](basic-auth.md)
-4. [Building From Source](build-from-source.md)
-5. [Trigger Rebuild With Webhook](trigger-rebuild-with-webhook.md)
-6. [Notifications Setup](notifications.md)
+3. [Importing Obsidian Vault](importing-vault.md)
+4. [Enabling Basic Auth](basic-auth.md)
+5. [Building From Source](build-from-source.md)
+6. [Trigger Rebuild With Webhook](trigger-rebuild-with-webhook.md)
+7. [Cron Job Trigger](cron-job-trigger.md)
+8. [Notifications Setup](notifications.md)

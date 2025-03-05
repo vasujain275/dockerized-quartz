@@ -28,20 +28,26 @@ To quickly get started with Quartz in Docker create `docker-compose.yml` file:
             environment:
             # Use your custom Quartz repo or leave blank for the default Quartz repo
             # GIT_REPO: "https://github.com/yourusername/your-quartz-site.git"
+            
             # Optional: specify a branch to checkout
             # GIT_BRANCH: "v4"
+            
             # Optional: Update delay after which quartz build will trigger, default 300 seconds
             BUILD_UPDATE_DELAY: 120
+
             # Optional: Auto rebuild Quartz after change in Obsidian Vault 
             AUTO_REBUILD: true
             volumes:
             # Mount your Obsidian vault for Quartz to read and build the site from
             # If not set it will mount docs
             # - /path/on/host:/vault:ro
+            #
             # Optional: Mount existing Quartz repo
             # - /path/on/host:/usr/src/app/quartz
+            #
             # Optional: Persist nginx logs if needed
             # - /path/to/nginx/logs:/var/log/nginx
+            #
             # Optional: Mount nginx conf
             # - /path/on/host:/etc/nginx
             ports:
