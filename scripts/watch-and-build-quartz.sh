@@ -6,7 +6,7 @@ WATCH_DIR="/vault"
 BUILD_SCRIPT="/usr/src/app/scripts/build-quartz.sh"
 
 # Delay in seconds before triggering a build after detecting file changes
-DELAY=${DELAY:-300}
+BUILD_UPDATE_DELAY=${BUILD_UPDATE_DELAY:-300}
 
 # Timestamp of the last detected change
 LAST_CHANGE=0
@@ -34,7 +34,7 @@ schedule_build() {
 
     # Start the delay in the background and capture its PID
     (
-        sleep $DELAY
+        sleep $BUILD_UPDATE_DELAY
 
         # Once delay expires, trigger the build if no new changes occur
         rebuild_site
