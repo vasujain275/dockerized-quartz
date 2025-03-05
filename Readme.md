@@ -1,22 +1,22 @@
 # Dockerized Quartz
 
-[Quartz (v4)](https://github.com/jackyzha0/quartz) is a lightweight static site generator that helps you host your digital garden. This project provides automated dockerized solution to build and serve Quartz sites with minimal configuration.
+[Quartz (v4)](https://github.com/jackyzha0/quartz) is a lightweight static site generator that helps you host your digital garden with minimal setup. This project provides an automated, Dockerized solution to build and serve Quartz sites effortlessly. Simply mount your Obsidian Vault as a Docker volume, and Quartz will handle the rest!
 
 ## Features
 
-- **Minimal Configuration**: Simply plug in your existing Obsidian Vault as docker bind volume.
+- 🚀 **Minimal Configuration**: Simply plug in your existing Obsidian Vault as a Docker bind volume.
 
-- **Automated Builds**: Quartz will rebuild every time after set delay as notes in your docker voulume change.
+- 🔄 **Automated Builds**: Rebuilds automatically after a set delay when notes in your Docker volume change.
 
-- **Webhook Trigger**: Additional way of triggering Quartz build by sending POST request to secret URL.
+- 🔗 **Webhook Trigger**: Trigger builds by sending a POST request to a secret URL.
 
-- **Notifications**: Notifications on build start, success or fail. 
+- 📢 **Notifications**: Get notified on build start, success, or failure.
 
-- **Default or Custom Quartz Repository**: If none present, container will clone git repo on startup, [the Quartz repo](https://github.com/jackyzha0/quartz) or your custom one.
+- 📦 **Default or Custom Quartz Repository**: If none present, container will clone [the Quartz repo](https://github.com/jackyzha0/quartz) on startup or you can provide your own customized Quartz.
 
-- **Support for Private Repositories**: If you want to hide your Quartz config. 
+- 🔒 **Support for Private Repositories**: Keep your Quartz config private.
 
-- **NGINX Web Server**: Served with NGINX, basic configuration by default, can be extended by mounting docker volume and editing `nginx.conf`
+- 🌐 **NGINX Web Server**: Served with NGINX, with basic configuration that can be extended.
 
 ## Quick Start
 
@@ -65,7 +65,7 @@ To quickly get started with Quartz in Docker create `docker-compose.yml` file:
 
 For more detailed setups [see docs](docs/index.md).
 
-### Table of Contents
+### Documentation
 
 1. [Overview](docs/overview.md)
 2. [Providing Quartz](docs/providing-quartz.md)
@@ -75,3 +75,15 @@ For more detailed setups [see docs](docs/index.md).
 6. [Trigger Rebuild With Webhook](docs/trigger-rebuild-with-webhook.md)
 7. [Cron Job Trigger](docs/cron-job-trigger.md)
 8. [Notifications Setup](docs/notifications.md)
+
+---
+
+### Attribution  
+
+This project builds upon and integrates several open-source projects:  
+
+- [**Quartz v4**](https://github.com/jackyzha0/quartz) – The core static site generator that powers this project.  
+- [**Apprise**](https://github.com/caronc/apprise) – Handles notifications for build status updates.  
+- [**NGINX**](https://www.nginx.com/) – Serves the generated Quartz site with a configurable web server.  
+
+A huge thanks to the maintainers of these projects for their amazing work! 🚀
