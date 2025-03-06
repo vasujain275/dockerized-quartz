@@ -57,7 +57,7 @@ nginx -g 'daemon off;' &
 # If AUTO_REBUILD is true, hand off to the watch-and-build script
 if [ "$AUTO_REBUILD" = true ]; then
   echo "Auto rebuild is enabled. Starting watch-and-build script..."
-  /usr/src/app/scripts/watch-and-build-quartz.sh
+  /usr/src/app/scripts/watch-and-build-quartz.sh &
 else
   echo "Auto rebuild is disabled."
 fi
@@ -77,4 +77,4 @@ else
     echo "Notifications are not enabled."
 fi
 
-wait -n
+wait
