@@ -1,5 +1,7 @@
 # Dockerized Quartz
 
+**Note:** This is a fork of the original [dockerized-quartz](https://github.com/shommey/dockerized-quartz) repository. This fork has been created to add support for multi-platform Docker images (`linux/amd64`, `linux/arm64`).
+
 [Quartz (v4)](https://github.com/jackyzha0/quartz) is a lightweight static site generator that helps you host your digital garden with minimal setup. This project provides an automated, Dockerized solution to build and serve Quartz sites effortlessly. Simply mount your Obsidian Vault as a Docker volume, and Quartz will handle the rest!
 
 ## Features
@@ -27,7 +29,7 @@ To quickly get started with Quartz in Docker create `docker-compose.yml` file:
     version: '3.8'
     services:
         quartz:
-            image: shommey/dockerized-quartz
+            image: vasujain275/dockerized-quartz
             container_name: quartz-notes
             environment:
             # Use your custom Quartz repo or leave blank for the default Quartz repo

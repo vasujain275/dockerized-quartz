@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   quartz:
-    image: shommey/dockerized-quartz
+    image: vasujain275/dockerized-quartz
     container_name: quartz-notes
     environment:
       # Use your custom Quartz repo or leave blank for the default Quartz repo

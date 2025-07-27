@@ -2,7 +2,7 @@
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/shommey/dockerized-quartz.git
+   git clone https://github.com/vasujain275/dockerized-quartz.git
    cd dockerized-quartz
    ```
 
